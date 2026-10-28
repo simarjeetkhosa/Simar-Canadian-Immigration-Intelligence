@@ -6,6 +6,14 @@ Created by **Simarjeet Khosa** · Suite v1.0.0 · MIT License
 
 [Download release ZIP](releases/Simar-Immigration-Suite-v1.0.0.zip) · [Detailed installation](INSTALL.md) · [Validation](VALIDATION.md) · [License](LICENSE)
 
+## Use, share and contribute
+
+**You are welcome to use these skills, adapt them for your work, and share improvements.** The [MIT License](LICENSE) permits personal and commercial use, modification and redistribution when its copyright and license notice are preserved. AI services and third-party materials retain their own terms.
+
+[Get installation help](SUPPORT.md) · [Report a bug](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration/issues/new?template=bug.yml) · [Suggest an improvement](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration/issues/new?template=feature.yml) · [Contribute a change](CONTRIBUTING.md)
+
+New to GitHub? Use the help link to describe your setup, or fork this repository and submit a pull request for an improvement. Contributions are reviewed before merging. Use fictional examples in community posts.
+
 ## About the skills
 
 A skill is a reusable set of instructions, reference material and optional scripts that an AI agent loads for a specific task. Your chosen AI application provides the model, research tools, file execution and connected services.
