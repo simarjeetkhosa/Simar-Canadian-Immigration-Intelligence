@@ -1,0 +1,2 @@
+# Official MCP Python SDK, tested version. Review security updates before deployment.
+mcp==1.30.0

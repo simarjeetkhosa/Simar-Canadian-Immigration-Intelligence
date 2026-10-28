@@ -1,0 +1,15 @@
+{
+  "assistant_name": "Simar",
+  "firm_name": "",
+  "professional_role": "",
+  "jurisdiction": "",
+  "licence_number_if_needed_and_confirmed": "",
+  "responsible_human_reviewer": "",
+  "timezone": "",
+  "default_language": "English",
+  "permitted_matter_types": [],
+  "approved_case_storage": "",
+  "client_data_upload_policy": "",
+  "final_human_review_required": true,
+  "signing_or_submission_pre_authorized": false
+}
