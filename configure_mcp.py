@@ -17,9 +17,9 @@ def main():
     script = Path(__file__).resolve().parent / "mcp-server/server.py"
     command = {"command": str(executable), "args": [str(script)]}
     outputs = {
-        "claude-desktop.json": json.dumps({"mcpServers": {"simar-immigration": command}}, indent=2),
-        "vscode-mcp.json": json.dumps({"servers": {"simar-immigration": {"type": "stdio", **command}}}, indent=2),
-        "codex-config.toml": "[mcp_servers.simar-immigration]\ncommand = " + json.dumps(str(executable)) + "\nargs = [" + json.dumps(str(script)) + "]\n",
+        "claude-desktop.json": json.dumps({"mcpServers": {"simar-canadian-immigration-intelligence": command}}, indent=2),
+        "vscode-mcp.json": json.dumps({"servers": {"simar-canadian-immigration-intelligence": {"type": "stdio", **command}}}, indent=2),
+        "codex-config.toml": "[mcp_servers.simar-canadian-immigration-intelligence]\ncommand = " + json.dumps(str(executable)) + "\nargs = [" + json.dumps(str(script)) + "]\n",
     }
     destination = args.output_dir.expanduser().absolute()
     if any((destination / name).exists() for name in outputs):

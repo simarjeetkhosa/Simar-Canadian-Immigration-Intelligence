@@ -1,10 +1,8 @@
-# Install Simar Immigration Suite
+# Install Simar Canadian Immigration Intelligence
 
-Version 1.0.0 • 28 October 2026 • Copyright (c) 2026 Simarjeet Khosa • MIT License
+Version 1.0.1 • 28 October 2026 • Copyright (c) 2026 Simarjeet Khosa • MIT License
 
 Start by extracting this entire release ZIP. Keep the extracted folder in a permanent location if you use its MCP server. Choose one skill installation method per AI host to avoid duplicate copies. Installing a skill does not connect Adobe, enable web access, create schedules or submit cases.
-
-For a single-page overview covering Claude, ChatGPT/Codex, Gemini and other AI agents, see [the main guide](README.md#choose-your-ai).
 
 ## Choose an option
 
@@ -15,25 +13,32 @@ For a single-page overview covering Claude, ChatGPT/Codex, Gemini and other AI a
 | Codex CLI / IDE | Run the local installer for `codex` | Native skills under `.agents/skills` |
 | Claude Code | Run the local installer for `claude-code` | Native skills under `.claude/skills` |
 | VS Code agent supporting skills | Run the project installer for `vscode` | Skills under `.github/skills` |
-| Gemini CLI | Use `gemini skills install` for each local folder; see [Gemini setup](README.md#gemini-cli) | Native Agent Skills |
 | Other AI with an MCP client | Start the MCP server and configure the supported transport | Searchable workflow guidance and blank review templates |
-| AI with file context but no skill loader | Load `adapters/host-instructions.txt` and `adapters/simar-knowledge.md` | Instruction/knowledge fallback; no tools are installed |
+| AI with file context but no skill loader | Load `adapters/host-instructions.txt` and `adapters/simar-canadian-immigration-intelligence-knowledge.md` | Instruction/knowledge fallback; no tools are installed |
 
 Availability depends on the host version, plan and organizational policy. The code is locally tested; this release has not been installed or tested inside your Claude account or every listed AI product.
 
+## Updating an earlier Simar installation
+
+The main name is now **Simar Canadian Immigration Intelligence**, and the companion is **Simar Canadian Immigration Intelligence Monitor**. Their folder names are `simar-canadian-immigration-intelligence` and `simar-canadian-immigration-intelligence-monitor`.
+
+For a local v1.0.0 installation, back up and move only the previous `simar-immigration-intelligence` and `simar-immigration-monitor` folders out of the host's active skill directory before installing these renamed folders. The installer detects the old names and stops to avoid duplicate skills. For an uploaded skill in another AI account, use that host's supported replacement or removal flow to avoid keeping both names active. Your personal skills in the originating ChatGPT account were renamed in place.
+
+If MCP was already configured, generate fresh snippets pointing at the renamed release folder. Update the old Simar entry to the new connection name rather than leaving two connections enabled. The public MCP tool names and `simar://about` resource remain stable; workflow document IDs now use the renamed skill folders, so retrieve current IDs with `simar_list_workflows`.
+
 ## 1. Upload to Claude
 
-Open **Customize → Skills**, select **+ → Create skill → Upload a skill**, and upload `uploads/simar-immigration-intelligence.zip`. Repeat with `uploads/simar-immigration-monitor.zip`. Ensure the account permits custom skills and code execution. Do not upload the entire release ZIP as one skill.
+Open **Customize → Skills**, select **+ → Create skill → Upload a skill**, and upload `uploads/simar-canadian-immigration-intelligence.zip`. Repeat with `uploads/simar-canadian-immigration-intelligence-monitor.zip`. Ensure the account permits custom skills and code execution. Do not upload the entire release ZIP as one skill.
 
-Each upload ZIP has one named skill folder containing `SKILL.md`, its referenced files, and `LICENSE`. Keep that structure. Enable the skills and test: “Use Simar Immigration Intelligence to prepare a case-audit template, without inventing client facts.”
+Each upload ZIP has one named skill folder containing `SKILL.md`, its referenced files, and `LICENSE`. Keep that structure. Enable the skills and test: “Use Simar Canadian Immigration Intelligence to prepare a case-audit template, without inventing client facts.”
 
 See [Claude's official skill instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude). A successful file attachment in a chat is not evidence that a skill was installed.
 
 ## 2. Install in ChatGPT
 
-In a supported ChatGPT desktop account with personal skills and Skill Creator, attach the two individual skill ZIPs and ask:
+Your personal Simar skills have been updated in the originating ChatGPT account. To install in another supported account, attach the two individual skill ZIPs and ask:
 
-> Use Skill Creator to install Simar Immigration Intelligence and Simar Immigration Monitor from these ZIPs. Keep their supporting references and scripts. Do not create any scheduled tasks.
+> Use Skill Creator to install Simar Canadian Immigration Intelligence and Simar Canadian Immigration Intelligence Monitor from these ZIPs. Keep their supporting references and scripts. Do not create any scheduled tasks.
 
 Confirm both skills appear in that account's Skills list. Invoke Simar explicitly using the available skill selector. If the account does not provide a skill installation feature, use the instruction/knowledge fallback or an MCP connection below; a plain attachment does not add execution permissions.
 
@@ -103,7 +108,7 @@ py -3 -m venv .venv
 | --- | --- |
 | Claude Desktop with local MCP support | Merge the `mcpServers` entry from `local-config/claude-desktop.json` into its documented local MCP configuration. Preserve other servers. |
 | Claude Code | Use its documented MCP configuration/add flow with the same Python command and server.py argument. |
-| Codex | Merge `local-config/codex-config.toml` into the host's MCP settings, or use `codex mcp add simar-immigration -- /absolute/path/to/venv/python /absolute/path/to/mcp-server/server.py`. |
+| Codex | Merge `local-config/codex-config.toml` into the host's MCP settings, or use `codex mcp add simar-canadian-immigration-intelligence -- /absolute/path/to/venv/python /absolute/path/to/mcp-server/server.py`. |
 | ChatGPT desktop with local MCP support | In Settings → MCP servers, add a STDIO server using the generated Python command and server.py argument. Follow the current host's connection refresh flow. |
 | VS Code | Use its MCP add flow, or merge `local-config/vscode-mcp.json` into `.vscode/mcp.json` for the supported compatibility configuration. Its `servers` schema differs from the portable `mcpServers` schema. |
 | Another stdio MCP client | Use the venv Python executable as the command and the absolute path to server.py as its argument. |
@@ -142,13 +147,13 @@ The skill contains local helpers for standard PDF form drafts and document assem
 
 ```sh
 .venv/bin/python -m pip install -r pdf-requirements.txt
-.venv/bin/python skills/simar-immigration-intelligence/scripts/fill_pdf_form.py inspect "/path/to/form.pdf"
+.venv/bin/python skills/simar-canadian-immigration-intelligence/scripts/fill_pdf_form.py inspect "/path/to/form.pdf"
 ```
 
 After reviewing the field inventory, create `confirmed-fields.json` mapping exact field names to confirmed values. Then:
 
 ```sh
-.venv/bin/python skills/simar-immigration-intelligence/scripts/fill_pdf_form.py fill "/path/to/form.pdf" --values "/path/to/confirmed-fields.json" --output "/path/to/draft.pdf" --report "/path/to/review.json"
+.venv/bin/python skills/simar-canadian-immigration-intelligence/scripts/fill_pdf_form.py fill "/path/to/form.pdf" --values "/path/to/confirmed-fields.json" --output "/path/to/draft.pdf" --report "/path/to/review.json"
 ```
 
 Unknown or unsupported field types fail rather than being guessed. The draft and review manifest require human review. XFA, calculations, barcode and signed/encrypted forms need the specialized route described in the skill. Never flatten or regenerate a barcode form to bypass its validation. Optional OCR/compression requires separately installed system tools such as OCRmyPDF/Tesseract or Ghostscript; consult the document-assembly reference before use.

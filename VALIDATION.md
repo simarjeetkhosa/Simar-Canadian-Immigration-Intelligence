@@ -1,6 +1,8 @@
 # Release validation
 
-Checked on 28 October 2026. Version 1.0.0.
+Checked on 28 October 2026. Version 1.0.1.
+
+This release updates the product, skill, companion, MCP display/configuration, template and package names to Simar Canadian Immigration Intelligence. The existing integration suite was rerun after the rename, including protection against duplicate installations under the earlier folder names. Public MCP tool names remain stable.
 
 ## Completed
 

@@ -7,13 +7,18 @@ import shutil
 import tempfile
 from pathlib import Path
 
-NAMES = ("simar-immigration-intelligence", "simar-immigration-monitor")
+NAMES = ("simar-canadian-immigration-intelligence", "simar-canadian-immigration-intelligence-monitor")
+LEGACY_NAMES = ("simar-immigration-intelligence", "simar-immigration-monitor")
 ROOT = Path(__file__).resolve().parent
 
 
 def install(destination: Path, *, dry_run: bool = False) -> list[str]:
     destination = destination.expanduser().resolve()
     targets = [destination / name for name in NAMES]
+    for name in LEGACY_NAMES:
+        legacy = destination / name
+        if legacy.exists() or legacy.is_symlink():
+            raise FileExistsError(f"Previous Simar name detected: {legacy}. Back up and move this exact old skill folder before installing the renamed version; see INSTALL.md.")
     for name, target in zip(NAMES, targets):
         source = ROOT / "skills" / name
         if not (source / "SKILL.md").is_file():

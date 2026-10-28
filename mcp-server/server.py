@@ -13,7 +13,7 @@ from mcp.server.transport_security import TransportSecuritySettings
 from mcp.types import ToolAnnotations
 
 SUITE = Path(__file__).resolve().parents[1]
-SKILLS = ("simar-immigration-intelligence", "simar-immigration-monitor")
+SKILLS = ("simar-canadian-immigration-intelligence", "simar-canadian-immigration-intelligence-monitor")
 LIMITATION = (
     "Bundled workflow guidance, not current legal authority or a case database. "
     "Use the AI host's web tools to verify current primary sources and judgments. "
@@ -58,7 +58,7 @@ def build_server(*, host: str = "127.0.0.1", port: int = 8765,
                  allowed_origins: list[str] | None = None) -> FastMCP:
     catalogue = load_catalogue()
     mcp = FastMCP(
-        "Simar Immigration Workflows",
+        "Simar Canadian Immigration Intelligence",
         instructions="Start with simar_list_workflows, retrieve the relevant documents, then apply them using host capabilities. " + LIMITATION,
         host=host, port=port, stateless_http=True, json_response=True,
         log_level="WARNING", max_request_body_size=65_536,
@@ -108,14 +108,14 @@ def build_server(*, host: str = "127.0.0.1", port: int = 8765,
 
     @mcp.resource("simar://about")
     def about() -> str:
-        return "Simar Immigration Suite 1.0.0. Copyright (c) 2026 Simarjeet Khosa. MIT License.\n" + LIMITATION
+        return "Simar Canadian Immigration Intelligence 1.0.1. Copyright (c) 2026 Simarjeet Khosa. MIT License.\n" + LIMITATION
 
     @mcp.prompt()
     def prepare_case_audit() -> str:
         """Start an immigration case audit with evidence, source and human-review checks."""
         return (
-            "Use simar_get_document for skills/simar-immigration-intelligence/SKILL, "
-            "skills/simar-immigration-intelligence/references/professional-use-and-portability "
+            "Use simar_get_document for skills/simar-canadian-immigration-intelligence/SKILL, "
+            "skills/simar-canadian-immigration-intelligence/references/professional-use-and-portability "
             "and templates/CASE_AUDIT. Ask only for material missing facts. "
             "Check urgent dates before broader research, retrieve current primary sources, "
             "separate evidence from assumptions and prepare a draft for the appropriate human reviewer. "

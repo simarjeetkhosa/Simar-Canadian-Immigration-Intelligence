@@ -24,7 +24,7 @@ SERVER = ROOT / "mcp-server/server.py"
 
 async def check_tools(session):
     initialized = await session.initialize()
-    assert initialized.serverInfo.name == "Simar Immigration Workflows"
+    assert initialized.serverInfo.name == "Simar Canadian Immigration Intelligence"
     listed = await session.list_tools()
     assert {t.name for t in listed.tools} == {
         "simar_list_workflows", "simar_get_document", "simar_search_workflows"
@@ -103,7 +103,7 @@ def test_installer_preview_copy_and_preserve_existing(tmp_path):
     assert json.loads(preview.stdout)["status"] == "preview"
     assert not destination.exists()
     subprocess.run(command, check=True, capture_output=True)
-    installed = destination / "simar-immigration-intelligence/SKILL.md"
+    installed = destination / "simar-canadian-immigration-intelligence/SKILL.md"
     original = installed.read_bytes()
     sentinel = destination / "unrelated.txt"
     sentinel.write_text("keep me")
@@ -111,16 +111,27 @@ def test_installer_preview_copy_and_preserve_existing(tmp_path):
     assert again.returncode != 0 and "Already exists" in again.stderr
     assert installed.read_bytes() == original
     assert sentinel.read_text() == "keep me"
-    assert (destination / "simar-immigration-monitor/LICENSE").is_file()
+    assert (destination / "simar-canadian-immigration-intelligence-monitor/LICENSE").is_file()
+    legacy_destination = tmp_path / "legacy-skills"
+    legacy_folder = legacy_destination / "simar-immigration-intelligence"
+    legacy_folder.mkdir(parents=True)
+    legacy_file = legacy_folder / "SKILL.md"
+    legacy_file.write_text("existing user's version")
+    legacy_attempt = subprocess.run(
+        [sys.executable, str(ROOT / "install.py"), "--target", "generic", "--destination", str(legacy_destination)],
+        capture_output=True, text=True)
+    assert legacy_attempt.returncode != 0 and "Previous Simar name detected" in legacy_attempt.stderr
+    assert legacy_file.read_text() == "existing user's version"
+    assert not (legacy_destination / "simar-canadian-immigration-intelligence").exists()
 
 
 def test_generated_config_and_refuse_overwrite(tmp_path):
     command = [sys.executable, str(ROOT / "configure_mcp.py"), "--python", sys.executable,
                "--output-dir", str(tmp_path)]
     subprocess.run(command, check=True, capture_output=True)
-    claude = json.loads((tmp_path / "claude-desktop.json").read_text())["mcpServers"]["simar-immigration"]
-    codex = tomllib.loads((tmp_path / "codex-config.toml").read_text())["mcp_servers"]["simar-immigration"]
-    vscode = json.loads((tmp_path / "vscode-mcp.json").read_text())["servers"]["simar-immigration"]
+    claude = json.loads((tmp_path / "claude-desktop.json").read_text())["mcpServers"]["simar-canadian-immigration-intelligence"]
+    codex = tomllib.loads((tmp_path / "codex-config.toml").read_text())["mcp_servers"]["simar-canadian-immigration-intelligence"]
+    vscode = json.loads((tmp_path / "vscode-mcp.json").read_text())["servers"]["simar-canadian-immigration-intelligence"]
     assert claude["command"] == str(Path(sys.executable).absolute()) == codex["command"] == vscode["command"]
     assert claude["args"] == codex["args"] == vscode["args"] == [str(SERVER)]
     assert subprocess.run(command, capture_output=True).returncode != 0

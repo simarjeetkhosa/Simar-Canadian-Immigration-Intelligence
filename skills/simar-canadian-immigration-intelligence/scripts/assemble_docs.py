@@ -147,7 +147,7 @@ def merge(normalized, output, title, add_index, font_path):
         for page in PdfReader(pdf).pages:
             writer.add_page(page)
         writer.add_outline_item(Path(entry["source"]).stem, entry["start_page"] - 1)
-    writer.add_metadata({"/Title": title, "/Producer": "Simar document assembly"})
+    writer.add_metadata({"/Title": title, "/Producer": "Simar Canadian Immigration Intelligence document assembly"})
     with output.open("wb") as stream:
         writer.write(stream)
     return entries, offset
@@ -229,7 +229,7 @@ def restore_outlines(source, output, entries, index_pages, title):
         writer.add_outline_item("Index", 0)
     for entry in entries:
         writer.add_outline_item(Path(entry["source"]).stem, entry["start_page"] - 1)
-    writer.add_metadata({"/Title": title, "/Producer": "Simar document assembly"})
+    writer.add_metadata({"/Title": title, "/Producer": "Simar Canadian Immigration Intelligence document assembly"})
     with output.open("wb") as stream:
         writer.write(stream)
 

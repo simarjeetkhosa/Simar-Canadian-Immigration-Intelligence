@@ -1,8 +1,8 @@
 interface:
-  display_name: Simar Immigration Intelligence
+  display_name: Simar Canadian Immigration Intelligence
   short_description: Canadian immigration research and client drafting
-  default_prompt: Use $simar-immigration-intelligence to research this Canadian immigration
-    issue, verify current official sources, and give me a practical answer.
+  default_prompt: Use $simar-canadian-immigration-intelligence to research this Canadian
+    immigration issue, verify current official sources, and give me a practical answer.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:

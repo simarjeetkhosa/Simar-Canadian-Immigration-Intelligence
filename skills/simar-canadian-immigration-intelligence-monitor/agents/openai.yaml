@@ -1,7 +1,7 @@
 interface:
-  display_name: Simar Immigration Monitor
+  display_name: Simar Canadian Immigration Intelligence Monitor
   short_description: Schedule immigration updates and case reminders
-  default_prompt: Use $simar-immigration-monitor to set up a morning digest of verified
+  default_prompt: Use $simar-canadian-immigration-intelligence-monitor to set up a morning digest of verified
     Canadian immigration changes relevant to my practice.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg

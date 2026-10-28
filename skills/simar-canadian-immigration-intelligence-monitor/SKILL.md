@@ -1,9 +1,9 @@
 ---
-name: simar-immigration-monitor
+name: simar-canadian-immigration-intelligence-monitor
 description: Set up and manage requested Canadian immigration automations for Simar, including IRCC/Express Entry and all-PNP digests, AAIP/RCIP/FCIP intake watches, NOC and work-permit policy changes, case-date reminders and explicitly authorized intake-event triage. Use when the user asks to check later, repeatedly, on a schedule or when a relevant change occurs, or asks to edit/pause those tasks. Do not create a running task merely because this skill is installed or requested for improvement; exclude unrelated automations.
 ---
 
-# Simar Immigration Monitor
+# Simar Canadian Immigration Intelligence Monitor
 
 Turn a requested future check into a real, verified automation using the available scheduling tools. Never claim that a skill file runs on its own.
 
@@ -34,7 +34,7 @@ Ask only for missing information that changes the task materially. When a direct
 
 ## Execute a monitoring run
 
-Use Simar Immigration Intelligence when available for immigration research, source verification and case analysis. Discover it by skill name rather than hardcoding a local path. If unavailable, follow the primary-source and verification requirements in the monitoring reference.
+Use Simar Canadian Immigration Intelligence when available for immigration research, source verification and case analysis. Discover it by skill name rather than hardcoding a local path. If unavailable, follow the primary-source and verification requirements in the monitoring reference.
 
 Perform read-only research by default. Do not submit applications, contact employers/clients, send drafts, change case records or alter this skill merely because a watcher detected a change. A separately authorized action may proceed within its scope.
 

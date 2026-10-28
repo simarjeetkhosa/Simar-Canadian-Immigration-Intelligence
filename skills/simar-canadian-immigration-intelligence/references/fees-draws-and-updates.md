@@ -28,4 +28,4 @@ For a substantive update, give the verified change, effective date, affected/exc
 
 ## Recurring updates
 
-When the user requests future monitoring, invoke the companion Simar Immigration Monitor skill if available, or follow the available automation tool's current instructions. Adding this reference or installing a skill does not create a running task. Preserve confirmed schedules; do not create duplicate alerts.
+When the user requests future monitoring, invoke the companion Simar Canadian Immigration Intelligence Monitor skill if available, or follow the available automation tool's current instructions. Adding this reference or installing a skill does not create a running task. Preserve confirmed schedules; do not create duplicate alerts.
