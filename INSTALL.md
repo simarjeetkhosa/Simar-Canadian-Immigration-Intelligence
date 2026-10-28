@@ -4,6 +4,8 @@ Version 1.0.0 • 28 October 2026 • Copyright (c) 2026 Simarjeet Khosa • MIT
 
 Start by extracting this entire release ZIP. Keep the extracted folder in a permanent location if you use its MCP server. Choose one skill installation method per AI host to avoid duplicate copies. Installing a skill does not connect Adobe, enable web access, create schedules or submit cases.
 
+For a single-page overview covering Claude, ChatGPT/Codex, Gemini and other AI agents, see [the main guide](README.md#choose-your-ai).
+
 ## Choose an option
 
 | Your AI environment | Recommended option | What you receive |
@@ -13,6 +15,7 @@ Start by extracting this entire release ZIP. Keep the extracted folder in a perm
 | Codex CLI / IDE | Run the local installer for `codex` | Native skills under `.agents/skills` |
 | Claude Code | Run the local installer for `claude-code` | Native skills under `.claude/skills` |
 | VS Code agent supporting skills | Run the project installer for `vscode` | Skills under `.github/skills` |
+| Gemini CLI | Use `gemini skills install` for each local folder; see [Gemini setup](README.md#gemini-cli) | Native Agent Skills |
 | Other AI with an MCP client | Start the MCP server and configure the supported transport | Searchable workflow guidance and blank review templates |
 | AI with file context but no skill loader | Load `adapters/host-instructions.txt` and `adapters/simar-knowledge.md` | Instruction/knowledge fallback; no tools are installed |
 
@@ -28,7 +31,7 @@ See [Claude's official skill instructions](https://support.claude.com/en/article
 
 ## 2. Install in ChatGPT
 
-Your personal Simar skills have been updated in the originating ChatGPT account. To install in another supported account, attach the two individual skill ZIPs and ask:
+In a supported ChatGPT desktop account with personal skills and Skill Creator, attach the two individual skill ZIPs and ask:
 
 > Use Skill Creator to install Simar Immigration Intelligence and Simar Immigration Monitor from these ZIPs. Keep their supporting references and scripts. Do not create any scheduled tasks.
 

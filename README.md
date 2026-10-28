@@ -1,38 +1,166 @@
-# Simar Immigration Suite
+# Simar Canadian Immigration
 
-**Canadian immigration research, case preparation and review workflows for lawyers, RCICs, paralegals and their teams.**
+**AI agent skills for Canadian immigration research, case preparation, drafting and human review.**
 
-Copyright (c) 2026 **Simarjeet Khosa** · MIT License · Version 1.0.0
+Created by **Simarjeet Khosa** · Suite v1.0.0 · MIT License
 
-Start with **INSTALL.md** and choose the section for your AI platform.
+[Download release ZIP](releases/Simar-Immigration-Suite-v1.0.0.zip) · [Detailed installation](INSTALL.md) · [Validation](VALIDATION.md) · [License](LICENSE)
 
-| Included | Purpose |
+## About the skills
+
+A skill is a reusable set of instructions, reference material and optional scripts that an AI agent loads for a specific task. Your chosen AI application provides the model, research tools, file execution and connected services.
+
+| Skill | What it helps with |
 | --- | --- |
-| `uploads/` | Separate upload-ready ZIPs for Immigration Intelligence and Immigration Monitor |
-| `skills/` | Complete portable skill folders, reference workflows and PDF helper scripts |
-| `install.py` | Local installer for Claude Code, Codex, VS Code and an explicit generic directory |
-| `mcp-server/` | Read-only MCP workflow server supporting stdio and Streamable HTTP |
-| `configure_mcp.py` | Generates local connection snippets without modifying AI settings |
-| `adapters/` | Host instructions and a combined knowledge fallback |
-| `templates/` | Blank case audit, human-review record and firm profile |
-| `tests/` | Real MCP connection and installer checks |
-| `LICENSE` and `NOTICE.md` | MIT licence, copyright and third-party boundaries |
+| **Simar Immigration Intelligence** | Program screening, Express Entry, provincial pathways, AAIP, RCIP/FCIP, work permits, NOC/TEER comparisons, evidence checklists, English/Punjabi drafts, submission letters, refusal and judicial-review issue audits, and source verification. |
+| **Simar Immigration Monitor** | Requested immigration digests, policy/intake watches and reminders. Recurring runs require a separate supported scheduler and an explicit schedule request. |
 
-Simar Immigration Intelligence covers program screening, all-PNP research, AAIP, RCIP/FCIP, Express Entry and non-Express Entry routes, work-permit families, NOC/TEER matching, English/Punjabi drafting, natural submission letters, risk flags, refusal/JR audits and verified case-law integration. Requested form drafts preserve original evidence and require human review of the exact final version.
+The package also includes blank case-audit and human-review templates, optional PDF helpers, and a read-only MCP workflow server. Results depend on the AI host's actual capabilities. The suite supports professional preparation and review; final advice, filings and form approval remain with the responsible human reviewer.
 
-Simar Immigration Monitor provides the workflow for requested digests, policy/intake watches and reminders. Actual schedules require a supported scheduler and an explicit request.
+## Start here
 
-The host supplies current web research, document execution and connected Adobe capabilities. The MCP server supplies workflow context and blank templates; it does not perform live legal searches, fill forms or submit applications. Use the local helpers or capable connected tools for supported PDF work. No public server is deployed by this package.
+1. Download the release ZIP above, or choose **Code → Download ZIP** for the latest repository files.
+2. Extract it. Open the folder containing `install.py`, `skills/` and `uploads/`.
+3. Choose your AI below. Install both skills once per host, then verify they appear in its skills list.
+4. Try the example request near the bottom of this page.
 
-The software licence permits reuse, modification and redistribution under its terms. It does not confer a professional licence or authority to practise in a court or tribunal. Adapt review responsibilities to the actual professional role and forum.
+Because this repository is private, downloads and cloning require an authorized GitHub account. Platform versions and workspace policies may affect availability.
 
-Example requests:
+## Choose your AI
 
-- “Use Simar to audit this work-permit refusal and prepare a counsel-review issue matrix.”
-- “Compare these actual job duties against current NOC descriptions and explain the strongest match.”
-- “Search and verify relevant case law, then add supported authorities to my draft with pinpoint citations.”
-- “Fill this supported form from the confirmed evidence and prepare the human-review report.”
-- “Draft a natural submission letter linked to these documents, without inventing missing facts.”
-- “Set up a weekday immigration digest at my confirmed local time using the available scheduler.”
+| AI application | Installation route |
+| --- | --- |
+| Claude web / desktop with custom skills | Upload the two individual skill ZIPs. |
+| Claude Code | Run the bundled installer for `claude-code`. |
+| ChatGPT desktop with personal skills | Use its Skill Creator with the two individual skill ZIPs. |
+| Codex CLI / IDE | Run the bundled installer for `codex`. |
+| Gemini CLI | Install each local skill folder using Gemini's own skill command. |
+| Gemini web / Gems or another chat assistant | Use the instruction/knowledge fallback if file context and custom instructions are supported. |
+| VS Code / GitHub Copilot with Agent Skills | Install into the project's `.github/skills` directory. |
+| Cursor, Windsurf, Cline, Roo Code, Antigravity and other agents | Use the host's documented Agent Skills importer or directory; otherwise use MCP or the context fallback below. Support varies by product and version. |
 
-This release contains no client records, account credentials, paid research corpus or professional licence numbers. See VALIDATION.md for what was tested and what remains host-dependent.
+### Claude web and desktop
+
+In **Customize → Skills**, choose **+ → Create skill → Upload a skill**. Upload these separately and enable both:
+
+- [`simar-immigration-intelligence.zip`](uploads/simar-immigration-intelligence.zip)
+- [`simar-immigration-monitor.zip`](uploads/simar-immigration-monitor.zip)
+
+Enable code execution/file creation as required by your account. Upload the individual skill ZIPs, rather than the whole suite. See [Claude's official instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+
+### Claude Code
+
+Requires Python 3.10+. Run from the extracted suite folder:
+
+```sh
+python3 install.py --target claude-code --scope user --dry-run
+python3 install.py --target claude-code --scope user
+```
+
+This copies both skills into `~/.claude/skills/`. Start a fresh session and ask Claude to use Simar Immigration Intelligence. [Official Claude Code guide](https://code.claude.com/docs/en/skills).
+
+### ChatGPT desktop
+
+Where personal skills and Skill Creator are available, attach the two individual ZIPs from `uploads/` and ask:
+
+> Use Skill Creator to install Simar Immigration Intelligence and Simar Immigration Monitor from these ZIPs. Preserve their references and scripts. Do not create scheduled tasks.
+
+Confirm both appear in **Skills**, then select a skill with `@`. Attaching files alone does not prove installation. This repository is a standalone skills package; it is not a published ChatGPT marketplace plugin. See [OpenAI's skills guide](https://learn.chatgpt.com/docs/build-skills).
+
+### Codex CLI and IDE
+
+From the extracted suite folder:
+
+```sh
+python3 install.py --target codex --scope user --dry-run
+python3 install.py --target codex --scope user
+```
+
+The bundled installer copies both folders into `~/.agents/skills/`. Refresh or restart if they do not appear. Invoke `$simar-immigration-intelligence` or `$simar-immigration-monitor`. To install for one project, replace `--scope user` with `--scope project --project "/path/to/project"`.
+
+### Gemini CLI
+
+With Gemini CLI already installed, run from the extracted suite folder:
+
+```sh
+gemini skills install ./skills/simar-immigration-intelligence
+gemini skills install ./skills/simar-immigration-monitor
+gemini skills list --all
+```
+
+Review Gemini's installation prompts. In an interactive session, use `/skills reload` and `/skills list`, then ask it to use the selected Simar skill. These are Gemini CLI commands; the bundled Python installer has no `gemini` target. See [Google's official Agent Skills guide](https://geminicli.com/docs/cli/skills/).
+
+### VS Code / GitHub Copilot
+
+For a VS Code agent with Agent Skills enabled:
+
+```sh
+python3 install.py --target vscode --scope project --project "/path/to/project" --dry-run
+python3 install.py --target vscode --scope project --project "/path/to/project"
+```
+
+This writes the two skill folders under the project's `.github/skills/`. Open that project in VS Code and confirm discovery. See [Microsoft's Agent Skills guide](https://code.visualstudio.com/docs/agent-customization/agent-skills).
+
+### Other AI agents with native skills
+
+Use the application's documented skill import flow with each folder under `skills/`. Preserve `SKILL.md`, references, scripts, assets and licensing together. If the host documents a compatible local directory, the generic installer can copy both skills there:
+
+```sh
+python3 install.py --target generic --destination "/absolute/path/to/host/skills" --dry-run
+python3 install.py --target generic --destination "/absolute/path/to/host/skills"
+```
+
+Replace the example destination with the actual documented directory. Copying files does not establish compatibility; confirm the host discovers both skills and loads their references. Use one installation route per host to avoid duplicates.
+
+### Gemini web, Gems and assistants without a skill loader
+
+If your application supports custom instructions and reference files:
+
+1. Add [`adapters/host-instructions.txt`](adapters/host-instructions.txt) to its custom instructions.
+2. Add [`adapters/simar-knowledge.md`](adapters/simar-knowledge.md) as reference knowledge or file context, subject to the host's file limits.
+3. Ask it to use the Simar workflow and confirm which files it can read.
+
+This gives the assistant workflow context. It does not install native skills, run the Python helpers, enable live research or create an autonomous agent. If uploads are unavailable, provide the relevant reference section in the conversation.
+
+## Optional: connect an MCP-capable agent
+
+The included MCP server exposes bundled workflow documents and blank templates through three read-only tools: `simar_list_workflows`, `simar_get_document` and `simar_search_workflows`.
+
+On macOS/Linux, from the suite folder:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r mcp-server/requirements.txt
+.venv/bin/python configure_mcp.py --python .venv/bin/python
+```
+
+Use the generated `local-config/` snippets in your client's documented MCP settings. Keep the suite folder in place. The [detailed guide](INSTALL.md#4-start-the-mcp-server-locally) covers Windows, stdio, HTTP and remote hosting. A cloud AI cannot reach your Mac's loopback address directly. No hosted endpoint is included.
+
+## Try your first request
+
+> Use Simar Immigration Intelligence to prepare a blank Canadian immigration case-audit checklist. Separate confirmed facts, missing evidence, research questions and human-review steps. Do not invent client facts.
+
+Other examples:
+
+- “Compare these confirmed job duties with current NOC descriptions and cite the primary sources.”
+- “Audit this refusal and build an evidence-linked issue matrix for counsel review.”
+- “Draft an English and Punjabi client document checklist from these confirmed facts.”
+- “Use Simar Immigration Monitor to prepare a one-time update on these specified programs.”
+
+For recurring monitoring, separately confirm the topics, frequency, timezone and destination in a host with a scheduler.
+
+## Verify installation and troubleshoot
+
+- **Skills missing:** confirm both named folders contain `SKILL.md`; refresh the host or start a new session.
+- **Installer says already exists:** back up and move only the exact old Simar folders before reinstalling; it deliberately avoids overwriting.
+- **No live sources or file tools:** connect the capabilities through the host. Installing instructions does not grant tool access.
+- **Forms:** PDF helpers are optional; see [PDF setup](INSTALL.md#6-enable-pdf-and-adobe-workflows). Drafts require review, and specialized XFA/barcode forms need an appropriate validation workflow.
+- **Remove:** use the host's skill uninstall flow, or remove only the two installed Simar folders. Disconnect MCP separately if configured.
+
+Installation is confirmed when both skills are discoverable and the host can produce the blank audit checklist using the correct references. Platform instructions were checked against the linked vendor documentation on 28 October 2026; end-to-end installation has not been tested in every AI application.
+
+## Package and license
+
+[`skills/`](skills/) · [`uploads/`](uploads/) · [`templates/`](templates/) · [`mcp-server/`](mcp-server/) · [Detailed installation](INSTALL.md) · [Test scope](VALIDATION.md)
+
+Copyright (c) 2026 Simarjeet Khosa. Distributed under the [MIT License](LICENSE); preserve [NOTICE.md](NOTICE.md) when redistributing. The original v1.0.0 ZIP and its checksums describe the original release; this repository's guide may receive later documentation updates.
