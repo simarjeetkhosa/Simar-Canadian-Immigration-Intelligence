@@ -2,15 +2,15 @@
 
 **AI agent skills for Canadian immigration research, case preparation, drafting and human review.**
 
-Created by **Simarjeet Khosa** · Version 1.0.1 · MIT License
+Created by **Simarjeet Khosa** · Version 1.0.2 · MIT License
 
-[Download release ZIP](releases/Simar-Canadian-Immigration-Intelligence-v1.0.1.zip) · [Detailed installation](INSTALL.md) · [Validation](VALIDATION.md) · [License](LICENSE)
+[Download release ZIP](releases/Simar-Canadian-Immigration-Intelligence-v1.0.2.zip) · [Detailed installation](INSTALL.md) · [Validation](VALIDATION.md) · [License](LICENSE)
 
 ## Use, share and contribute
 
 **You are welcome to use these skills, adapt them for your work, and share improvements.** The [MIT License](LICENSE) permits personal and commercial use, modification and redistribution when its copyright and license notice are preserved. AI services and third-party materials retain their own terms.
 
-[Get installation help](SUPPORT.md) · [Report a bug](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration/issues/new?template=bug.yml) · [Suggest an improvement](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration/issues/new?template=feature.yml) · [Contribute a change](CONTRIBUTING.md)
+[Get installation help](SUPPORT.md) · [Report a bug](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/issues/new?template=bug.yml) · [Suggest an improvement](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/issues/new?template=feature.yml) · [Contribute a change](CONTRIBUTING.md)
 
 New to GitHub? Use the help link to describe your setup, or fork this repository and submit a pull request for an improvement. Contributions are reviewed before merging. Use fictional examples in community posts.
 
@@ -24,6 +24,10 @@ A skill is a reusable set of instructions, reference material and optional scrip
 | **Simar Canadian Immigration Intelligence Monitor** | Requested immigration digests, policy/intake watches and reminders. Recurring runs require a separate supported scheduler and an explicit schedule request. |
 
 The package also includes blank case-audit and human-review templates, optional PDF helpers, and a read-only MCP workflow server. Results depend on the AI host's actual capabilities. The suite supports professional preparation and review; final advice, filings and form approval remain with the responsible human reviewer.
+
+## Security update: v1.0.2
+
+This release upgrades the optional PDF dependency from `pypdf 6.10.0` to `6.21.2` to address GitHub's reported PDF parsing denial-of-service vulnerabilities. Existing users should refresh their PDF environment with `python -m pip install -r pdf-requirements.txt` using that environment's Python. Download the new ZIP rather than reusing an earlier archive. See [security update details](SECURITY.md).
 
 ## Upgrading from v1.0.0
 
@@ -175,4 +179,4 @@ Installation is confirmed when both skills are discoverable and the host can pro
 
 [`skills/`](skills/) · [`uploads/`](uploads/) · [`templates/`](templates/) · [`mcp-server/`](mcp-server/) · [Detailed installation](INSTALL.md) · [Test scope](VALIDATION.md)
 
-Copyright (c) 2026 Simarjeet Khosa. Distributed under the [MIT License](LICENSE); preserve [NOTICE.md](NOTICE.md) when redistributing. The v1.0.1 ZIP is the supplied release archive. Its checksums describe the packaged release; this repository's main guide includes community documentation updates.
+Copyright (c) 2026 Simarjeet Khosa. Distributed under the [MIT License](LICENSE); preserve [NOTICE.md](NOTICE.md) when redistributing. The v1.0.2 download contains the security dependency update and the current guides.

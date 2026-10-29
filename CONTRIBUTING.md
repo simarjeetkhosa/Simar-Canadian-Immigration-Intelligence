@@ -18,7 +18,7 @@ You can contribute without writing code: report a confusing instruction, propose
 - Describe platform compatibility as tested only when you actually tested it; include the product and version.
 - Use synthetic data. Do not include client documents, passport numbers, application identifiers, credentials, or other private information in issues, commits or screenshots.
 - Preserve LICENSE and NOTICE.md. Contributions are submitted under this repository's MIT License.
-- Treat the original v1.0.0 ZIP as a historical release. For a new release, regenerate its archives and checksums together.
+- Treat the original release ZIP as a historical release. For a new release, regenerate its archives and checksums together.
 
 ## Check your change
 

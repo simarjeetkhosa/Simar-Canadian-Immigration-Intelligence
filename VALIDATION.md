@@ -1,5 +1,13 @@
 # Release validation
 
+## v1.0.2 security update — 29 October 2026
+
+Updated optional PDF dependency to pypdf 6.21.2, the version proposed by GitHub Dependabot for the reported vulnerabilities. Six tests passed on macOS with Python 3.14.2: the five existing MCP/installer/configuration tests plus a synthetic two-page AcroForm round trip. The new regression verifies saved field values, page count, appearance checks, unchanged source, pending human review, and refusal to overwrite an existing draft. The test environment used MCP 1.30.0, pypdf 6.21.2, Pillow 12.3.0, ReportLab 4.5.1 and img2pdf 0.6.3.
+
+These checks confirm compatibility with the exercised workflows. They are not an exhaustive security audit, exploit test suite, visual form review or legal/portal validation. Earlier validation below is retained as historical context.
+
+## Original v1.0.1 validation
+
 Checked on 28 October 2026. Version 1.0.1.
 
 This release updates the product, skill, companion, MCP display/configuration, template and package names to Simar Canadian Immigration Intelligence. The existing integration suite was rerun after the rename, including protection against duplicate installations under the earlier folder names. Public MCP tool names remain stable.

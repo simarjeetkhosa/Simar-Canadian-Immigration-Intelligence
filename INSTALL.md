@@ -1,6 +1,6 @@
 # Install Simar Canadian Immigration Intelligence
 
-Version 1.0.1 • 28 October 2026 • Copyright (c) 2026 Simarjeet Khosa • MIT License
+Version 1.0.2 • 29 October 2026 • Copyright (c) 2026 Simarjeet Khosa • MIT License
 
 Start by extracting this entire release ZIP. Keep the extracted folder in a permanent location if you use its MCP server. Choose one skill installation method per AI host to avoid duplicate copies. Installing a skill does not connect Adobe, enable web access, create schedules or submit cases.
 
@@ -182,7 +182,7 @@ For recurring monitoring, explicitly request a schedule in a host with a support
 Run the included checks with Python 3.11 or later after installing development dependencies:
 
 ```sh
-.venv/bin/python -m pip install pytest
+.venv/bin/python -m pip install pytest -r pdf-requirements.txt
 .venv/bin/python -m pytest -q tests
 ```
 
