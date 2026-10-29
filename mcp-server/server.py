@@ -108,7 +108,7 @@ def build_server(*, host: str = "127.0.0.1", port: int = 8765,
 
     @mcp.resource("simar://about")
     def about() -> str:
-        return "Simar Canadian Immigration Intelligence 1.0.2. Copyright (c) 2026 Simarjeet Khosa. MIT License.\n" + LIMITATION
+        return "Simar Canadian Immigration Intelligence 1.0.3. Copyright (c) 2026 Simarjeet Khosa. MIT License.\n" + LIMITATION
 
     @mcp.prompt()
     def prepare_case_audit() -> str:

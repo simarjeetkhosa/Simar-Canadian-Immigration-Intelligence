@@ -2,13 +2,13 @@
 
 **AI agent skills for Canadian immigration research, case preparation, drafting and human review.**
 
-Created by **Simarjeet Khosa** · Version 1.0.2 · MIT License
+Created by **Simarjeet Khosa** · Version 1.0.3 · MIT License
 
 ## Download and install
 
-**[Download the complete v1.0.2 package](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/Simar-Canadian-Immigration-Intelligence-v1.0.2.zip)**
+**[Download the complete v1.0.3 package](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/Simar-Canadian-Immigration-Intelligence-v1.0.3.zip)**
 
-[Latest release](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/latest) · [Read the installation guide](INSTALL.md) · [Download the guide](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/INSTALL.md) · [Download checksums](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/SHA256SUMS.txt)
+[Latest release](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/latest) · [Read the installation guide](INSTALL.md) · [Download the guide](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/INSTALL.md) · [Download checksums](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/SHA256SUMS.txt)
 
 ### Easy installation
 
@@ -28,8 +28,8 @@ Created by **Simarjeet Khosa** · Version 1.0.2 · MIT License
 
 **Individual skill downloads — upload each ZIP separately:**
 
-- [Immigration Intelligence skill](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence.zip)
-- [Immigration Monitor companion](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence-monitor.zip)
+- [Immigration Intelligence skill](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/simar-canadian-immigration-intelligence.zip)
+- [Immigration Monitor companion](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/simar-canadian-immigration-intelligence-monitor.zip)
 
 **First request to try:**
 
@@ -39,15 +39,15 @@ Uploading a file to a chat alone does not install a skill. Features depend on yo
 
 [Detailed platform setup](#choose-your-ai) · [About the skills](#about-the-skills) · [Validation](VALIDATION.md) · [License](LICENSE)
 
-## Latest skill improvements on main
+## New in v1.0.3
 
-The current development copy adds substantive representative submissions, marriage and relationship timelines, evidence-to-policy analysis, verified case-law integration and refusal-file workflows. These improvements are newer than the published **v1.0.2** release.
+The current development copy adds substantive representative submissions, marriage and relationship timelines, evidence-to-policy analysis, verified case-law integration and refusal-file workflows. These improvements are included in the **v1.0.3** release.
 
 - [Download the updated Immigration Intelligence skill ZIP](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/raw/refs/heads/main/uploads/simar-canadian-immigration-intelligence.zip)
 - [Read the relationship-evidence workflow](skills/simar-canadian-immigration-intelligence/references/relationship-evidence.md)
 - [Read the representative-submission workflow](skills/simar-canadian-immigration-intelligence/references/submission-letters.md)
 
-Use the updated skill ZIP for these new instructions. For a full working copy, choose **Code → Download ZIP** from `main`; the tagged v1.0.2 release stays unchanged. Existing installations must be backed up and replaced through the host's supported skill-update flow. The Monitor companion is unchanged.
+Download the v1.0.3 release package or the individual skill ZIP for these instructions. Existing installations must be backed up and replaced through the host's supported skill-update flow. The Monitor companion is unchanged.
 
 ## Use, share and contribute
 
@@ -68,9 +68,9 @@ A skill is a reusable set of instructions, reference material and optional scrip
 
 The package also includes blank case-audit and human-review templates, optional PDF helpers, and a read-only MCP workflow server. Results depend on the AI host's actual capabilities. The suite supports professional preparation and review; final advice, filings and form approval remain with the responsible human reviewer.
 
-## Security update: v1.0.2
+## Security update retained from v1.0.2
 
-This release upgrades the optional PDF dependency from `pypdf 6.10.0` to `6.21.2` to address GitHub's reported PDF parsing denial-of-service vulnerabilities. Existing users should refresh their PDF environment with `python -m pip install -r pdf-requirements.txt` using that environment's Python. Download the new ZIP rather than reusing an earlier archive. See [security update details](SECURITY.md).
+The v1.0.2 security update upgraded the optional PDF dependency from `pypdf 6.10.0` to `6.21.2` to address GitHub's reported PDF parsing denial-of-service vulnerabilities. Existing users should refresh their PDF environment with `python -m pip install -r pdf-requirements.txt` using that environment's Python. Download the new ZIP rather than reusing an earlier archive. See [security update details](SECURITY.md).
 
 ## Upgrading from v1.0.0
 
@@ -102,8 +102,8 @@ This repository and its release downloads are public. Platform versions and work
 
 In **Customize → Skills**, choose **+ → Create skill → Upload a skill**. Upload these separately and enable both:
 
-- [`simar-canadian-immigration-intelligence.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence.zip)
-- [`simar-canadian-immigration-intelligence-monitor.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence-monitor.zip)
+- [`simar-canadian-immigration-intelligence.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/simar-canadian-immigration-intelligence.zip)
+- [`simar-canadian-immigration-intelligence-monitor.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.3/simar-canadian-immigration-intelligence-monitor.zip)
 
 Enable code execution/file creation as required by your account. Upload the individual skill ZIPs, rather than the whole suite. See [Claude's official instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
@@ -222,4 +222,4 @@ Installation is confirmed when both skills are discoverable and the host can pro
 
 [`skills/`](skills/) · [`uploads/`](uploads/) · [`templates/`](templates/) · [`mcp-server/`](mcp-server/) · [Detailed installation](INSTALL.md) · [Test scope](VALIDATION.md)
 
-Copyright (c) 2026 Simarjeet Khosa. Distributed under the [MIT License](LICENSE); preserve [NOTICE.md](NOTICE.md) when redistributing. The v1.0.2 download contains the security dependency update and the current guides.
+Copyright (c) 2026 Simarjeet Khosa. Distributed under the [MIT License](LICENSE); preserve [NOTICE.md](NOTICE.md) when redistributing. The v1.0.3 download contains the security dependency update and the current guides.

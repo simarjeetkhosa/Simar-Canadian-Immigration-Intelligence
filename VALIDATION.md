@@ -1,5 +1,10 @@
 # Release validation
 
+## v1.0.3 workflow update — 29 October 2026
+
+Adds substantive representative submissions, relationship chronology and marriage-evidence assessment, verified policy/case-law integration and refusal-file workflows. Skill metadata validation passed. All six existing compatibility/integration tests passed before packaging. These checks do not establish legal accuracy for a client case or compatibility with every AI host.
+
+
 ## v1.0.2 security update — 29 October 2026
 
 Updated optional PDF dependency to pypdf 6.21.2, the version proposed by GitHub Dependabot for the reported vulnerabilities. Six tests passed on macOS with Python 3.14.2: the five existing MCP/installer/configuration tests plus a synthetic two-page AcroForm round trip. The new regression verifies saved field values, page count, appearance checks, unchanged source, pending human review, and refusal to overwrite an existing draft. The test environment used MCP 1.30.0, pypdf 6.21.2, Pillow 12.3.0, ReportLab 4.5.1 and img2pdf 0.6.3.
