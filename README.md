@@ -4,7 +4,40 @@
 
 Created by **Simarjeet Khosa** · Version 1.0.2 · MIT License
 
-[Download release ZIP](releases/Simar-Canadian-Immigration-Intelligence-v1.0.2.zip) · [Detailed installation](INSTALL.md) · [Validation](VALIDATION.md) · [License](LICENSE)
+## Download and install
+
+**[Download the complete v1.0.2 package](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/Simar-Canadian-Immigration-Intelligence-v1.0.2.zip)**
+
+[Latest release](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/latest) · [Read the installation guide](INSTALL.md) · [Download the guide](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/INSTALL.md) · [Download checksums](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/SHA256SUMS.txt)
+
+### Easy installation
+
+1. **Choose your download.** For a local AI agent, get the complete package above and extract it. For an AI with skill-ZIP import, use the individual downloads below.
+2. **Install for your AI.** Follow the matching row in this table. Local commands run in the extracted folder containing `install.py`; they require Python 3.10 or later.
+3. **Confirm and try it.** Refresh your AI's skills list and ask it to use **Simar Canadian Immigration Intelligence** with the example below.
+
+| Your AI | Quick installation |
+| --- | --- |
+| **Claude web / desktop** | Download the two individual ZIPs below. In **Customize → Skills → + → Create skill → Upload a skill**, upload them separately and enable both. |
+| **ChatGPT desktop with personal skills** | Attach the two individual ZIPs and ask Skill Creator to install both, keeping references and scripts. Confirm both appear in **Skills**. |
+| **Codex CLI / IDE** | Run `python3 install.py --target codex --scope user`. |
+| **Claude Code** | Run `python3 install.py --target claude-code --scope user`. |
+| **Gemini CLI** | Run `gemini skills install ./skills/simar-canadian-immigration-intelligence`, then `gemini skills install ./skills/simar-canadian-immigration-intelligence-monitor`. |
+| **VS Code / GitHub Copilot** | Run `python3 install.py --target vscode --scope project --project "/path/to/your/project"`, replacing the example path with your project folder. |
+| **Other AI agents / Gemini web** | Use the [native skills, MCP or file-context instructions](#choose-your-ai) appropriate to your host. |
+
+**Individual skill downloads — upload each ZIP separately:**
+
+- [Immigration Intelligence skill](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence.zip)
+- [Immigration Monitor companion](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence-monitor.zip)
+
+**First request to try:**
+
+> Use Simar Canadian Immigration Intelligence to prepare a blank Canadian immigration case-audit checklist. Separate confirmed facts, missing evidence, research questions and human-review steps. Do not invent client facts.
+
+Uploading a file to a chat alone does not install a skill. Features depend on your AI application and account. If an installer reports an existing skill, follow the [upgrade instructions](#upgrading-from-v100) before retrying. [Need help?](SUPPORT.md)
+
+[Detailed platform setup](#choose-your-ai) · [About the skills](#about-the-skills) · [Validation](VALIDATION.md) · [License](LICENSE)
 
 ## Use, share and contribute
 
@@ -35,12 +68,12 @@ The skill folders are now named `simar-canadian-immigration-intelligence` and `s
 
 ## Start here
 
-1. Download the release ZIP above, or choose **Code → Download ZIP** for the latest repository files.
+1. Download the complete package from [the latest release](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/latest). Choose the named Simar package ZIP under **Assets**.
 2. Extract it. Open the folder containing `install.py`, `skills/` and `uploads/`.
 3. Choose your AI below. Install both skills once per host, then verify they appear in its skills list.
 4. Try the example request near the bottom of this page.
 
-Because this repository is private, downloads and cloning require an authorized GitHub account. Platform versions and workspace policies may affect availability.
+This repository and its release downloads are public. Platform versions and workspace policies may affect skill availability.
 
 ## Choose your AI
 
@@ -59,8 +92,8 @@ Because this repository is private, downloads and cloning require an authorized 
 
 In **Customize → Skills**, choose **+ → Create skill → Upload a skill**. Upload these separately and enable both:
 
-- [`simar-canadian-immigration-intelligence.zip`](uploads/simar-canadian-immigration-intelligence.zip)
-- [`simar-canadian-immigration-intelligence-monitor.zip`](uploads/simar-canadian-immigration-intelligence-monitor.zip)
+- [`simar-canadian-immigration-intelligence.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence.zip)
+- [`simar-canadian-immigration-intelligence-monitor.zip`](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/releases/download/v1.0.2/simar-canadian-immigration-intelligence-monitor.zip)
 
 Enable code execution/file creation as required by your account. Upload the individual skill ZIPs, rather than the whole suite. See [Claude's official instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
