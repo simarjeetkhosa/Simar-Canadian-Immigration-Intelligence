@@ -39,6 +39,16 @@ Uploading a file to a chat alone does not install a skill. Features depend on yo
 
 [Detailed platform setup](#choose-your-ai) · [About the skills](#about-the-skills) · [Validation](VALIDATION.md) · [License](LICENSE)
 
+## Latest skill improvements on main
+
+The current development copy adds substantive representative submissions, marriage and relationship timelines, evidence-to-policy analysis, verified case-law integration and refusal-file workflows. These improvements are newer than the published **v1.0.2** release.
+
+- [Download the updated Immigration Intelligence skill ZIP](https://github.com/simarjeetkhosa/Simar-Canadian-Immigration-Intelligence/raw/refs/heads/main/uploads/simar-canadian-immigration-intelligence.zip)
+- [Read the relationship-evidence workflow](skills/simar-canadian-immigration-intelligence/references/relationship-evidence.md)
+- [Read the representative-submission workflow](skills/simar-canadian-immigration-intelligence/references/submission-letters.md)
+
+Use the updated skill ZIP for these new instructions. For a full working copy, choose **Code → Download ZIP** from `main`; the tagged v1.0.2 release stays unchanged. Existing installations must be backed up and replaced through the host's supported skill-update flow. The Monitor companion is unchanged.
+
 ## Use, share and contribute
 
 **You are welcome to use these skills, adapt them for your work, and share improvements.** The [MIT License](LICENSE) permits personal and commercial use, modification and redistribution when its copyright and license notice are preserved. AI services and third-party materials retain their own terms.

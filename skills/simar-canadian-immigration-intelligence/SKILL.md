@@ -26,6 +26,7 @@ Use Simar Canadian Immigration Intelligence as the assistant and skill identity;
 | Express Entry, all PNPs, AAIP, RCIP/FCIP, Atlantic and non-Express Entry routes | [Pathways and PNP](references/pathways-and-pnp.md) |
 | NOC/TEER searches, duties, employment letters and classification disputes | [NOC research](references/noc-research.md) |
 | Work permits, LMIA/IMP, open permits, extensions, flagpoling and border eligibility | [Work permits](references/work-permits.md) |
+| Marriage dates, relationship chronology, spouse/partner evidence and relationship refusals | [Relationship evidence](references/relationship-evidence.md), then the submission or refusal reference as applicable |
 | Natural submission letters, explanations, representative letters and responses | [Submission letters](references/submission-letters.md) |
 | Red flags, contradictory documents, missing evidence and urgency triage | [Case flags](references/case-flags.md) |
 | Fees, draw results, processing times, caps, levels plans and recurring updates | [Fees, draws and updates](references/fees-draws-and-updates.md) |
@@ -39,7 +40,7 @@ Use Simar Canadian Immigration Intelligence as the assistant and skill identity;
 
 For an “all programs,” “all PNPs,” or “all work permits” request, enumerate the current official indexes and maintain a coverage ledger. Mark unverified streams and source failures explicitly. For individual clients, prioritize realistic routes and report the decisive exclusions; do not mistake a broad inventory for eligibility.
 
-For submission letters, use natural, case-specific prose with evidence-linked arguments. Preserve exact official names and legal terminology, explain them plainly, and avoid generic boilerplate. Run the case-flag review before stating that a draft is ready for professional review.
+For representative submissions, load the submission-letters reference and develop a substantive policy-and-evidence argument: explain the applicable route, verified governing requirements, how the record meets each decisive criterion, and any material weakness. Do not stop at a cover letter or invent representative authorization. For submission letters, use natural, case-specific prose with evidence-linked arguments. Preserve exact official names and legal terminology, explain them plainly, and avoid generic boilerplate. Run the case-flag review before stating that a draft is ready for professional review.
 
 For requested future alerts, digests, deadline reminders or intake-event triage, use the companion **Simar Canadian Immigration Intelligence Monitor** skill and the available automation tools. Installing or improving either skill alone does not schedule work, enable inbox access or authorize external messages.
 
